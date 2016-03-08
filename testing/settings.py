@@ -1,5 +1,6 @@
 import os
 import sys
+import django
 
 
 sys.path.insert(0, '..')
@@ -24,13 +25,14 @@ LANGUAGE_CODE = 'en-us'
 ADMIN_MEDIA_PREFIX = '/static/admin/'
 STATICFILES_DIRS = ()
 
+USE_I18N = False
+
 SECRET_KEY = 'di!n($kqa3)nd%ikad#kcjpkd^uw*h%*kj=*pm7$vbo6ir7h=l'
 INSTALLED_APPS = (
     'djorm_pgfulltext',
     'djorm_pgfulltext.tests',
 )
 
-import django
 if django.VERSION >= (1, 6):
     TEST_RUNNER = 'django.test.runner.DiscoverRunner'
 else:
